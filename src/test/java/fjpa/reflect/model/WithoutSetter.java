@@ -3,11 +3,13 @@ package fjpa.reflect.model;
 import com.ricka.princy.fjpa.annotations.Column;
 import com.ricka.princy.fjpa.annotations.Entity;
 import com.ricka.princy.fjpa.annotations.Id;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-@Entity(name = "example_table")
-@Data
-public class Example {
+@Getter
+@Entity
+@AllArgsConstructor
+public class WithoutSetter {
     @Id
     @Column
     private String id;
