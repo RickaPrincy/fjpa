@@ -1,4 +1,4 @@
-package com.ricka.princy.annotation;
+package com.ricka.princy.fjpa.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface ValueGetter {
-    String field() default "getId";
+@Target(ElementType.TYPE)
+public @interface Entity {
+    String name() default "";
 }

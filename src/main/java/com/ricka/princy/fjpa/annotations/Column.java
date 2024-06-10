@@ -1,4 +1,4 @@
-package com.ricka.princy.annotation;
+package com.ricka.princy.fjpa.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface Relation {
-    String refColumnName() default "id";
+public @interface Column {
+    String name() default "";
+    boolean required() default true;
 }
