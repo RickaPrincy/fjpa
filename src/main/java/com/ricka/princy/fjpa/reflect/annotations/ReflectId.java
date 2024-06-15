@@ -6,7 +6,6 @@ import com.ricka.princy.fjpa.exceptions.MissingAnnotationException;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.List;
 
 public class ReflectId {
     public static boolean isId(Field field){

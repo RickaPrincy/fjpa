@@ -1,6 +1,3 @@
 package com.ricka.princy.fjpa.types;
 
-import lombok.Builder;
-
-@Builder
-public record Model(Attribute id, String name, SqlMetaData sqlMetaData) {}
+public record Model<T>(Class<T> clazz, String name, Attribute<T> id, SqlMetaData sqlMetaData) {}
