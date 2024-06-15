@@ -1,9 +1,8 @@
-package com.ricka.princy.fjpa.reflect;
+package com.ricka.princy.fjpa.reflect.annotations;
 
 import com.ricka.princy.fjpa.annotations.Accessors;
 import com.ricka.princy.fjpa.exceptions.FJPAException;
 import com.ricka.princy.fjpa.utils.Utils;
-import lombok.RequiredArgsConstructor;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

@@ -1,8 +1,8 @@
-package fjpa.reflect.reflect_accessors;
+package fjpa.reflect.annotations.reflect_accessors;
 
 import com.ricka.princy.fjpa.exceptions.FJPAException;
-import com.ricka.princy.fjpa.reflect.ReflectAccessors;
-import fjpa.reflect.reflect_accessors.model.Example;
+import com.ricka.princy.fjpa.reflect.annotations.ReflectAccessors;
+import fjpa.reflect.annotations.reflect_accessors.model.Example;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;

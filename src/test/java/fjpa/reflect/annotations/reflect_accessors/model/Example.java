@@ -1,4 +1,4 @@
-package fjpa.reflect.reflect_accessors.model;
+package fjpa.reflect.annotations.reflect_accessors.model;
 
 import com.ricka.princy.fjpa.annotations.Accessors;
 import lombok.Getter;

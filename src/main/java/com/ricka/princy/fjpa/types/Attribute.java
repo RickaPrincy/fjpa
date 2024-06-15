@@ -9,5 +9,6 @@ public record Attribute(
     boolean isId,
     String name,
     Method getter,
-    Method setter
+    Method setter,
+    ColumnSqlMetaData sqlMetaData
 ) {}
