@@ -1,8 +1,6 @@
 name: ci
 
 on:
-  push:
-    branches: [ "dev" ]
   pull_request:
     branches: [ "dev" ]
 
@@ -10,6 +8,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.13.0
         with:
@@ -17,5 +18,5 @@ jobs:
           java-distribution: 'temurin'
           maven-version: '3.9.6'
 
-      - name: test with coverage (min -> 75%)
+      - name: Test with coverage (min -> 75%)
         run: mvn -B test verify

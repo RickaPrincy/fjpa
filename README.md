@@ -1,5 +1,7 @@
 Fake JPA
 
+![Coverage](.github/badges/jacoco.svg)
+
 ## A UTILITY WHEN WE CANNOT USE JPA (AT SCHOOL)
  
 - **CRUD**
