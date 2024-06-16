@@ -1,7 +1,7 @@
 Fake JPA
 
 ## A UTILITY WHEN WE CANNOT USE JPA (AT SCHOOL)
-
+ 
 - **CRUD**
   - findAll
   - findById
