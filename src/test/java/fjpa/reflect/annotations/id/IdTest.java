@@ -1,11 +1,11 @@
-package fjpa.reflect.annotations.reflect_id;
+package fjpa.reflect.annotations.id;
 
 import com.ricka.princy.fjpa.exceptions.FJPAException;
 import com.ricka.princy.fjpa.exceptions.MissingAnnotationException;
 import com.ricka.princy.fjpa.reflect.annotations.ReflectId;
-import fjpa.reflect.annotations.reflect_id.model.Dummy;
-import fjpa.reflect.annotations.reflect_id.model.MultipleId;
-import fjpa.reflect.annotations.reflect_id.model.WithoutId;
+import fjpa.reflect.annotations.id.model.Dummy;
+import fjpa.reflect.annotations.id.model.MultipleId;
+import fjpa.reflect.annotations.id.model.WithoutId;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;

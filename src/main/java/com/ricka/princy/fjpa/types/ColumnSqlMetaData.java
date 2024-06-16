@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class ColumnSqlMetaData extends SqlMetaData {
     private final boolean isRequired;
-    public ColumnSqlMetaData(boolean isRequired, String name) {
+    public ColumnSqlMetaData(String name, boolean isRequired) {
         super(name);
         this.isRequired = isRequired;
     }

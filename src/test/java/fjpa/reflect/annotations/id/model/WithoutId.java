@@ -1,4 +1,4 @@
-package fjpa.reflect.annotations.reflect_id.model;
+package fjpa.reflect.annotations.id.model;
 
 public class WithoutId {
     private String notId;

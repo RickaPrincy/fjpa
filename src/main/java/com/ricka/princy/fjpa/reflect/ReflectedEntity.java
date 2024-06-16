@@ -1,5 +1,6 @@
 package com.ricka.princy.fjpa.reflect;
 
+import com.ricka.princy.fjpa.reflect.annotations.ReflectEntity;
 import com.ricka.princy.fjpa.reflect.annotations.ReflectId;
 import com.ricka.princy.fjpa.types.Attribute;
 import com.ricka.princy.fjpa.types.Model;
@@ -18,6 +19,7 @@ public class ReflectedEntity<T>{
 
     public ReflectedEntity(Class<T> clazz) {
         ReflectId.validateId(clazz);
+        ReflectEntity.validateEntityConstructors(clazz);
         this.attributes = ReflectAttribute.getAttributes(clazz);
         var id = this.attributes.stream().filter(Attribute::isId).findFirst().orElseThrow(RuntimeException::new);
         this.model = ReflectModel.getModel(clazz, id);
@@ -30,9 +32,7 @@ public class ReflectedEntity<T>{
                 .findFirst().orElseThrow(()-> new RuntimeException("Entity must have noArgsConstructor"));
         try{
             T instance = noArgsConstructor.newInstance();
-            argsValues.forEach((attribute, value) -> {
-                attribute.invokeSetter(instance, value);
-            });
+            argsValues.forEach((attribute, value) -> attribute.invokeSetter(instance, value));
             return instance;
         }catch(InvocationTargetException | InstantiationException | IllegalAccessException error){
             throw new RuntimeException("Instantiation error for " + this.model.name());

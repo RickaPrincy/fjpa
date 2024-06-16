@@ -16,13 +16,13 @@ public class ReflectColumn {
                 .toList();
     }
 
-    public static <T> ColumnSqlMetaData getColumnSqlMetaData(Class<T> clazz, Field field){
-        if(field.isAnnotationPresent(Column.class)){
+    public static ColumnSqlMetaData getColumnSqlMetaData(Field field){
+        if(!field.isAnnotationPresent(Column.class)){
             throw new MissingAnnotationException(Column.class);
         }
 
         var column = field.getAnnotation(Column.class);
         var columnName = column.name().isEmpty() ? field.getName().toLowerCase() : column.name();
-        return new ColumnSqlMetaData(column.required(), columnName);
+        return new ColumnSqlMetaData(columnName, column.required());
     }
 }

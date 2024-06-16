@@ -2,7 +2,6 @@ package com.ricka.princy.fjpa.reflect;
 
 import com.ricka.princy.fjpa.reflect.annotations.ReflectAccessors;
 import com.ricka.princy.fjpa.reflect.annotations.ReflectColumn;
-import com.ricka.princy.fjpa.reflect.annotations.ReflectEntity;
 import com.ricka.princy.fjpa.reflect.annotations.ReflectId;
 import com.ricka.princy.fjpa.types.Attribute;
 
@@ -19,11 +18,12 @@ public class ReflectAttribute {
 
     private static <T> Attribute<T> getAttributeData(Class<T> clazz, Field field){
         return new Attribute<>(
-            ReflectId.isId(field),
+            field.getType(),
             field.getName(),
+            ReflectId.isId(field),
             ReflectAccessors.getGetter(clazz, field),
             ReflectAccessors.getSetter(clazz, field),
-            ReflectColumn.getColumnSqlMetaData(clazz, field)
+            ReflectColumn.getColumnSqlMetaData(field)
         );
     }
 }

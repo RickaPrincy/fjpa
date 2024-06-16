@@ -6,8 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public record Attribute<T>(
-    boolean isId,
+    Class<?> clazz,
     String name,
+    boolean isId,
     Method getter,
     Method setter,
     ColumnSqlMetaData sqlMetaData

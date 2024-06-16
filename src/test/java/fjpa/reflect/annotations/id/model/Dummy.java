@@ -1,4 +1,4 @@
-package fjpa.reflect.annotations.reflect_id.model;
+package fjpa.reflect.annotations.id.model;
 
 import com.ricka.princy.fjpa.annotations.Id;
 
