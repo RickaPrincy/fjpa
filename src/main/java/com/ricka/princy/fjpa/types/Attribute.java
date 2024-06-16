@@ -16,7 +16,7 @@ public record Attribute<T>(
     public void invokeSetter(T instance, Object ...values){
         try {
             this.setter.invoke(instance, values);
-        } catch (IllegalAccessException | InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException | IllegalArgumentException e) {
             throw new FJPAException("TODO");
         }
     }

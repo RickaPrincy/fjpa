@@ -20,5 +20,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      #- name: Maven test
-      #  run: mvn -B test --file pom.xml
+      - name: Maven test
+        run: mvn test
+
+      - name: Code Coverage (min -> 75%)
+        run: mvn jacoco:prepare-agent test jacoco:report jacoco:check
+
+      - name: Maven build
+        run: mvn clean package

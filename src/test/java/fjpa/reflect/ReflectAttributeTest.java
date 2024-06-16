@@ -1,5 +1,6 @@
 package fjpa.reflect;
 
+import com.ricka.princy.fjpa.exceptions.FJPAException;
 import com.ricka.princy.fjpa.reflect.ReflectAttribute;
 
 import com.ricka.princy.fjpa.types.ColumnSqlMetaData;
@@ -93,5 +94,13 @@ public class ReflectAttributeTest {
         assertEquals(instantNow, createdAtAttribute.invokeGetter(exampleInstance));
         createdAtAttribute.invokeSetter(exampleInstance,instant2024);
         assertEquals(instant2024, createdAtAttribute.invokeGetter(exampleInstance));
+    }
+
+    @Test
+    void should_throw_if_attributes_setter_invoked_with_wrong_args(){
+        var dummyInstance = new Dummy("1", "myDummy");
+        var idAttribute = ReflectAttribute.getAttributes(Dummy.class).getFirst();
+
+        assertThrows(FJPAException.class, ()-> idAttribute.invokeSetter(dummyInstance,55));
     }
 }
